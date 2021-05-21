@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const dataPopulators = require("./seed-data");
 
-const memory_challenge = new Sequelize("memory_challenge", "root", "haroorah1", {
+const crime_alert = new Sequelize("crime_alert", "root", "haroorah1", {
   host: "localhost",
   dialect: "mysql",
   // dialect: "sqlite",
@@ -11,7 +11,7 @@ const memory_challenge = new Sequelize("memory_challenge", "root", "haroorah1", 
 });
 
 // Model definition
-const User = memory_challenge.define("User", {
+const User = crime_alert.define("User", {
 
   id: {
     type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
@@ -28,7 +28,7 @@ const User = memory_challenge.define("User", {
 
 });
 
-const Game = memory_challenge.define("Game", {
+const Game = crime_alert.define("Game", {
 
   id: {
     type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
@@ -41,7 +41,7 @@ const Game = memory_challenge.define("Game", {
 
 });
 
-const Player = memory_challenge.define("Player", {
+const Player = crime_alert.define("Player", {
 
   playerNumber: Sequelize.INTEGER, //players number inside the game (example: player1, player2 etc....)
   playerName: Sequelize.STRING      // username pulled from user table
@@ -85,4 +85,4 @@ Game.belongsToMany(User, { through: Player });
 module.exports.User = User;
 module.exports.Game = Game;
 module.exports.Player = Player;
-module.exports.memory_challenge = memory_challenge;
+module.exports.crime_alert = crime_alert;
