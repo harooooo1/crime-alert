@@ -1,0 +1,6 @@
+#feed {
+    color:red;
+    background-image: url("src/assets/policebackground.png");
+    background-size: cover;
+    background-position: center;
+}
