@@ -1,8 +1,6 @@
-#home {
-
-    width: 100%;
+#bg1 {
     height: 100%;
-    background-image: url("src/assets/policebackground.png");
-    background-size: cover;
-    background-position: center;
+    background-image: url("src/assets/police3.jpg");
+    background-size: 100%;
+    background-position: cover;
 }

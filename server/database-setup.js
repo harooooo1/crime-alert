@@ -28,6 +28,26 @@ const User = crime_alert.define("User", {
 
 });
 
+const Post = crime_alert.define("Post", {
+
+  id: {
+    type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
+  },
+  title: Sequelize.STRING,
+  text: Sequelize.STRING,
+  thumbnail: Sequelize.STRING, //will turn into different type with photos
+  state: Sequelize.BOOLEAN // 0 for shown, 1 for hidden, default 0
+
+});
+
+const Image = crime_alert.define("Image", {
+
+  type: Sequelize.STRING,
+  name: Sequelize.STRING,
+  data: Sequelize.BLOB("long")
+
+});
+
 const Game = crime_alert.define("Game", {
 
   id: {
@@ -51,6 +71,12 @@ const Player = crime_alert.define("Player", {
 //Hello.hasOne(Hello2);
 //Hello2.belongsTo(Hello);
 
+User.hasMany(Post);
+Post.belongsTo(User);
+
+Image.belongsTo(Post);
+Post.hasOne(Image);
+
 User.hasMany(Game);
 User.belongsToMany(Game, { through: Player });
 Game.belongsToMany(User, { through: Player });
@@ -65,12 +91,16 @@ Game.belongsToMany(User, { through: Player });
   // Drop tables in order to avoid foreign key constraint issues
   if (FORCE_RECREATE_MODELS) {
     User.drop();
+    Post.drop();
+    Image.drop();
     Game.drop();
     Player.drop();
   }
   // Sync models
   if (DO_SYNC) {
     await User.sync({ force: FORCE_RECREATE_MODELS });
+    await Post.sync({ force: FORCE_RECREATE_MODELS });
+    await Image.sync({ force: FORCE_RECREATE_MODELS });
     await Game.sync({ force: FORCE_RECREATE_MODELS });
     await Player.sync({ force: FORCE_RECREATE_MODELS });
   }
@@ -83,6 +113,8 @@ Game.belongsToMany(User, { through: Player });
 })();
 
 module.exports.User = User;
+module.exports.Post = Post;
+module.exports.Image = Image;
 module.exports.Game = Game;
 module.exports.Player = Player;
 module.exports.crime_alert = crime_alert;
