@@ -33,10 +33,9 @@ const Post = crime_alert.define("Post", {
   id: {
     type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
   },
-  title: Sequelize.STRING,
   text: Sequelize.STRING,
-  thumbnail: Sequelize.STRING, //will turn into different type with photos
-  state: Sequelize.BOOLEAN // 0 for shown, 1 for hidden, default 0
+  photo: Sequelize.STRING, // placeholder for post image / thumbnail
+  state: Sequelize.BOOLEAN // 0 for shown, 1 for hidden
 
 });
 
@@ -73,9 +72,8 @@ const Player = crime_alert.define("Player", {
 
 User.hasMany(Post);
 Post.belongsTo(User);
-
-Image.belongsTo(Post);
 Post.hasOne(Image);
+
 
 User.hasMany(Game);
 User.belongsToMany(Game, { through: Player });

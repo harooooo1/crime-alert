@@ -13,7 +13,7 @@ const GAMESMAP = {}
 
 //endpoints functions 
 
-async function getGames(req, res, next) {
+async function getGames(res, next) {
 
     const listGames = await Game.findAll();
 

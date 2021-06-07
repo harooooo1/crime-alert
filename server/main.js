@@ -6,6 +6,7 @@ console.log("HELLLO");
 // REQUEST HANDLERS IMPORT
 const AuthHandlers = require('./request-handlers/auth');
 const GameHandlers = require("./request-handlers/games");
+const PostHandlers = require("./request-handlers/crimes")
 const { ServiceUnavailableError } = require("restify-errors");
 // SERVER SETUP
 const cors = corsMiddleware({
@@ -47,6 +48,18 @@ server.post('/games/:id/leave', GameHandlers.leaveGames);
 server.post('/games/:id/reveal-card', GameHandlers.revealCards);
 
 server.post('/games/:id/kick', GameHandlers.kickPlayer);
+
+
+// crime alert endpoints
+
+server.head('/posts', PostHandlers.getPosts);
+
+server.get('/posts', PostHandlers.getPosts);
+server.get('/posts/:id', PostHandlers.getPostById);
+
+server.post('/posts', PostHandlers.createPost);
+server.post('/posts/:id/delete', PostHandlers.deletePost);
+server.post('/posts/:id/edit', PostHandlers.editPost);
 
 // INIT SERVER
 server.listen(8080, () =>
