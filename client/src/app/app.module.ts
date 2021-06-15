@@ -18,7 +18,7 @@ import { CrimeComponent } from './components/crime/crime.component';
 import { CrimeReportComponent } from './components/crime-report/crime-report.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
