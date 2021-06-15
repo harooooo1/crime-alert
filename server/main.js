@@ -52,7 +52,7 @@ server.post('/games/:id/kick', GameHandlers.kickPlayer);
 
 // crime alert endpoints
 
-server.head('/posts', PostHandlers.getPosts);
+//server.head('/posts', PostHandlers.getPosts);
 
 server.get('/posts', PostHandlers.getPosts);
 server.get('/posts/:id', PostHandlers.getPostById);

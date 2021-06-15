@@ -1,6 +1,6 @@
-#feed {
-    color:red;
-    background-image: url("src/assets/policebackground.png");
-    background-size: cover;
-    background-position: center;
+#post-button {
+
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
 }

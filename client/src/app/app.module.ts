@@ -11,10 +11,14 @@ import { GamesListComponent } from './components/games-list/games-list.component
 import { GameContainerComponent } from './components/game-container/game-container.component';
 import { GameLobbyComponent } from './components/game-lobby/game-lobby.component';
 import { GameComponent } from './components/game/game.component';
+
 import { CrimeFeedComponent } from './components/crime-feed/crime-feed.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CrimeComponent } from './components/crime/crime.component';
 import { CrimeReportComponent } from './components/crime-report/crime-report.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -35,7 +39,9 @@ import { CrimeReportComponent } from './components/crime-report/crime-report.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
