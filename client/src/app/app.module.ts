@@ -16,10 +16,13 @@ import { CrimeFeedComponent } from './components/crime-feed/crime-feed.component
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CrimeComponent } from './components/crime/crime.component';
 import { CrimeReportComponent } from './components/crime-report/crime-report.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { MatIconModule } from '@angular/material/icon';
     UserProfileComponent,
     CrimeComponent,
     CrimeReportComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,10 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

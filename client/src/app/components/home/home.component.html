@@ -1,9 +1,17 @@
-<div id="bg1">
-
-<h2>Home</h2>
-<button class="btn-primary btn" (click)="doLogout()">Log out</button>
-
-<button class="btn-primary btn" [routerLink]="['games']">Play</button>
-<button class="btn-primary btn" [routerLink]="['crime-feed']">Crime Alert</button>
-
+<div id="home-page">
+    <div id="bg1">
+        <div id="home-left">
+            
+            <div id="home-left-content">
+                <h2>Home</h2>
+                <button mat-flat-button color="warn" (click)="doLogout()">Log out</button>
+                <button mat-flat-button color="warn" [routerLink]="['crime-feed']">Crime Alert</button>
+            </div>
+        </div>
+        <div id="home-right">
+            <div id="home-right-content">
+                <button class="btn-primary btn" [routerLink]="['games']">Play</button>
+            </div>
+        </div>
+    </div>
 </div>

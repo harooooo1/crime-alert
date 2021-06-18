@@ -1,6 +1,31 @@
+#home-page {
+    width: 100%;
+    height:100%;
+}
+
 #bg1 {
+    width: 100%;
     height: 100%;
-    background-image: url("src/assets/police3.jpg");
-    background-size: 100%;
-    background-position: cover;
+    background-image: url("src/assets/policebackground.png");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+#home-left {
+
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#home-left-content {
+
+    text-align: right;
+    padding: 1em 1em 1em 3em;
+
 }

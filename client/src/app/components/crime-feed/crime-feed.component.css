@@ -4,3 +4,18 @@
     bottom: 2em;
     right: 2em;
 }
+
+
+#feed-page {
+    width: 100%;
+    height:100%;
+}
+
+
+#bg1 {
+    width: 100%;
+    height: 100%;
+    background-image: url("src/assets/policebackground.png");
+    background-size: cover;
+    background-position: center;
+}
