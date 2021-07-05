@@ -12,6 +12,11 @@ export class CreatePostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onPostClick(commentInput: HTMLTextAreaElement) {
+
+    
+  }
+
   onPhotoSelected(photoSelector: HTMLInputElement) {
     this.selectedImageFile = photoSelector.files[0];
     if(!this.selectedImageFile) return;

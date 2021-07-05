@@ -3,7 +3,7 @@ const Post = require('../database-setup').Post;
 const Image = require('../database-setup').Image;
 const errs = require('./auth');
 
-async function getPosts(res, next) {
+async function getPosts(req, res, next) {
 
     const listPosts = await Post.findAll();
 

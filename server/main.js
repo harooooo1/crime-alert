@@ -34,7 +34,7 @@ server.post('/logout', AuthHandlers.logout);
 
 // games endpoints
 
-server.head('/games', GameHandlers.getGames);
+// server.head('/games', GameHandlers.getGames);
 
 server.get('/games', GameHandlers.getGames);
 server.get('/games/:id', GameHandlers.getGamesById);
