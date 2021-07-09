@@ -54,11 +54,11 @@ async function createGames(req, res, next) {
         gameState: 0
     };
 
-    const game = await Game.create(newGame);
+    const game1 = await Game.create(newGame);
 
     res.send({
         code: 'Success',
-        data: game,
+        data: game1,
     });
 
     await makePlayer(game, game.UserId);
