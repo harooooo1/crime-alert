@@ -33,6 +33,7 @@ const Post = crime_alert.define("Post", {
   id: {
     type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
   },
+  title: Sequelize.STRING,
   text: Sequelize.STRING,
   photo: Sequelize.STRING, // placeholder for post image / thumbnail
   state: Sequelize.BOOLEAN // 0 for shown, 1 for hidden

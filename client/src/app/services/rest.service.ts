@@ -24,9 +24,11 @@ export class RestService {
     });
   }
 
-  createPost(title) {
+  createPost(title, text, photo) {
     return this.http.post(this.apiEndpoint + "posts", {
       title: title,
+      text: text,
+      photo: photo,
     }, {
       headers: { "x-auth-token": this.authService.getToken() },
     });
