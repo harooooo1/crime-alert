@@ -33,12 +33,14 @@ async function getPostById(req, res, next) {
 
 async function createPost(req, res, next) {
 
-    console.log("jeb");
+    console.log("photo, title, text");
+    console.log(req.body.photo);
+    console.log(req.body.title);
     console.log(req.body.text);
 
     const userId = req.get('userId');
-    const postTitle = req.body.text
-    const postText = req.body.text
+    const postTitle = req.body.title;
+    const postText = req.body.text;
 
     const newPost = {
         UserId: userId,

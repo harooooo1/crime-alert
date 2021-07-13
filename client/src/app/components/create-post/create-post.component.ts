@@ -14,15 +14,14 @@ export class CreatePostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPostClick(commentInput: HTMLTextAreaElement, titleInput: HTMLTextAreaElement, photoSelector: HTMLImageElement) {
+  onPostClick(titleInput: HTMLTextAreaElement, commentInput: HTMLTextAreaElement,  photoSelector: HTMLImageElement) {
 
-    console.log("creating post ");
-    console.log(commentInput);
-    console.log(this.onPhotoSelected);
     console.log(photoSelector);
-    console.log(titleInput);
-    // const postTitle = "Crime Report" + new Date();
-    this.restService.createPost(titleInput.value, commentInput.value, photoSelector).subscribe(
+    console.log(photoSelector.nodeValue);
+    console.log(this.onPhotoSelected);
+
+    const postTitle = titleInput.value + " " + new Date();
+    this.restService.createPost(postTitle, commentInput.value, photoSelector).subscribe(
       (res: any) => {
         console.log("Success", res.data.id);
         //this.router.navigate(["posts/" + res.data.id]);
