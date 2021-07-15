@@ -2,6 +2,7 @@ const User = require('../database-setup').User;
 const Post = require('../database-setup').Post;
 const Image = require('../database-setup').Image;
 const errs = require('./auth');
+const fs = require("fs");
 
 async function getPosts(req, res, next) {
 
@@ -33,20 +34,13 @@ async function getPostById(req, res, next) {
 
 async function createPost(req, res, next) {
 
-    console.log("photo, title, text");
-    console.log(req.body.photo);
-    console.log(req.body.title);
-    console.log(req.body.text);
-
     const userId = req.get('userId');
-    const postTitle = req.body.title;
-    const postText = req.body.text;
+    const postInfo = req.body.info;
 
     const newPost = {
         UserId: userId,
-        title: postTitle,
-        text: postText,
-        photo: "no",
+        title: postInfo.title,
+        text: postInfo.text,
         state: 0,
     };
 
@@ -59,7 +53,11 @@ async function createPost(req, res, next) {
         data: post,
     });
 
-    
+    Image.create({
+        type: postInfo.imgtype,
+        name: postInfo.imgname,
+        PostId: post.id
+    });
 
     return next();
 }

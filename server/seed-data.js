@@ -1,6 +1,6 @@
 /* module.exports.mockHelloData = async function mockHelloData(HelloModel) {
   await HelloModel.bulkCreate([
-    { name: "vlad", foo: { test: 1 } },
+    { name: "flaf", foo: { test: 1 } },
     { name: "harun", foo: { test: 2 } },
   ]);
 };

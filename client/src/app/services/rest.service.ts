@@ -9,7 +9,7 @@ import { AuthService } from "./auth.service";
 export class RestService {
   private apiEndpoint = "http://localhost:8080/";
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
 
   getAllPosts() {
@@ -24,11 +24,9 @@ export class RestService {
     });
   }
 
-  createPost(title, text, photo) {
+  createPost(info) {
     return this.http.post(this.apiEndpoint + "posts", {
-      title: title,
-      text: text,
-      photo: photo,
+      info: info
     }, {
       headers: { "x-auth-token": this.authService.getToken() },
     });

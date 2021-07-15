@@ -1,12 +1,12 @@
 const restify = require("restify");
 const corsMiddleware = require("restify-cors-middleware");
-
 console.log("HELLLO");
 
 // REQUEST HANDLERS IMPORT
 const AuthHandlers = require('./request-handlers/auth');
 const GameHandlers = require("./request-handlers/games");
 const PostHandlers = require("./request-handlers/crimes")
+
 const { ServiceUnavailableError } = require("restify-errors");
 // SERVER SETUP
 const cors = corsMiddleware({
@@ -16,7 +16,6 @@ const cors = corsMiddleware({
 
 const server = restify
   .createServer({ name: "crime-alert-api" })
-
   .pre(cors.preflight)
   .pre(restify.plugins.pre.dedupeSlashes())
   .pre(restify.plugins.pre.context())
@@ -32,10 +31,6 @@ server.post('/register', AuthHandlers.register);
 server.post('/login', AuthHandlers.login);
 server.post('/logout', AuthHandlers.logout);
 
-// games endpoints
-
-// server.head('/games', GameHandlers.getGames);
-
 server.get('/games', GameHandlers.getGames);
 server.get('/games/:id', GameHandlers.getGamesById);
 
@@ -49,7 +44,6 @@ server.post('/games/:id/reveal-card', GameHandlers.revealCards);
 
 server.post('/games/:id/kick', GameHandlers.kickPlayer);
 
-
 // crime alert endpoints
 
 server.head('/posts', PostHandlers.getPosts);
@@ -61,7 +55,6 @@ server.post('/posts', PostHandlers.createPost);
 server.post('/posts/:id/delete', PostHandlers.deletePost);
 server.post('/posts/:id/edit', PostHandlers.editPost);
 
-// INIT SERVER
 server.listen(8080, () =>
   console.log("%s listening at %s", server.name, server.url)
 );

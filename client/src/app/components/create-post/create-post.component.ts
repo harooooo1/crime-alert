@@ -8,35 +8,36 @@ import { Router } from "@angular/router";
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
-  selectedImageFile :File;
+  selectedImageFile: File;
   constructor(private restService: RestService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onPostClick(titleInput: HTMLTextAreaElement, commentInput: HTMLTextAreaElement,  photoSelector: HTMLImageElement) {
+  onPostClick(titleInput: HTMLTextAreaElement, commentInput: HTMLTextAreaElement) {
 
-    console.log(photoSelector);
-    console.log(photoSelector.nodeValue);
-    console.log(this.onPhotoSelected);
+    const PostInfo = {
+    title: titleInput.value + " " + new Date(),
+    text: commentInput.value,
+    imgtype: this.selectedImageFile.type,
+    imgname: this.selectedImageFile.name
+    }
 
-    const postTitle = titleInput.value + " " + new Date();
-    this.restService.createPost(postTitle, commentInput.value, photoSelector).subscribe(
+    this.restService.createPost(PostInfo).subscribe(
       (res: any) => {
         console.log("Success", res.data.id);
-        //this.router.navigate(["posts/" + res.data.id]);
         this.router.navigate(["crime-feed/"]);
       },
       (err) => {
         console.error("Failed to create post", err);
       }
     );
-
+    
   }
 
   onPhotoSelected(photoSelector: HTMLInputElement) {
     this.selectedImageFile = photoSelector.files[0];
-    if(!this.selectedImageFile) return;
+    if (!this.selectedImageFile) return;
     let fileReader = new FileReader();
     fileReader.readAsDataURL(this.selectedImageFile);
     fileReader.addEventListener(

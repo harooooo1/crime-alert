@@ -35,7 +35,6 @@ const Post = crime_alert.define("Post", {
   },
   title: Sequelize.STRING,
   text: Sequelize.STRING,
-  photo: Sequelize.STRING, // placeholder for post image / thumbnail
   state: Sequelize.BOOLEAN // 0 for shown, 1 for hidden
 
 });
