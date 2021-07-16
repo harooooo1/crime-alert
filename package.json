@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon  ./server/main.js",
-    "build": "cd client/ && npm install && ng build"
+    "start": "npx nodemon  ./server/main.js"
   },
   "keywords": [],
   "author": "",
