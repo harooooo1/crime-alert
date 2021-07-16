@@ -37,6 +37,8 @@ async function createPost(req, res, next) {
     const userId = req.get('userId');
     const postInfo = req.body.info;
 
+    console.log(req.body.image);
+
     const newPost = {
         UserId: userId,
         title: postInfo.title,

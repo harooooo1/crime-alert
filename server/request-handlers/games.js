@@ -61,7 +61,7 @@ async function createGames(req, res, next) {
         data: game1,
     });
 
-    await makePlayer(game, game.UserId);
+    await makePlayer(game1, game1.UserId);
 
     return next();
 }

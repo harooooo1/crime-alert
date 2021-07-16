@@ -23,10 +23,12 @@ export class CreatePostComponent implements OnInit {
     imgname: this.selectedImageFile.name
     }
 
+    //const imagezz = this.selectedImageFile;
+
     this.restService.createPost(PostInfo).subscribe(
       (res: any) => {
         console.log("Success", res.data.id);
-        this.router.navigate(["crime-feed/"]);
+        //this.router.navigate(["crime-feed/"]);
       },
       (err) => {
         console.error("Failed to create post", err);
