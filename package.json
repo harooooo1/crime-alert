@@ -2,17 +2,21 @@
   "name": "crime-alert",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+  "node": "14.x"
+  },
   "main": "index.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "backend": "node ./server/main.js",
+    "backend": "npx node ./server/main.js",
     "backend-dev" : "npx nodemon  ./server/main.js",
     "frontend": "cd client && npm start",
-    "dev" : "concurrently --kill-others \"npm run start\" \"npm run frontend\"",
+    "dev" : "concurrently --kill-others \"npm run backend-dev\" \"npm run frontend\"",
     "install-front": "cd client && npm install",
     "install-back": "npm install",
     "build-frontend": "cd client && npm run build",
-    "start": "npm run install-back && npm run frontend",
+    "start": "npm run install-back && npm run backend",
     "heroku-postbuild": "npm run install-front && npm run build-frontend"
   },
   "keywords": [],
