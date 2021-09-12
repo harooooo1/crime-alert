@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon  ./server/main.js"
+    "start": "npx nodemon  ./server/main.js",
+    "frontend": "cd client && npm start",
+    "dev" : "concurrently --kill-others \"npm run start\" \"npm run frontend\""
   },
   "keywords": [],
   "author": "",
@@ -36,5 +38,8 @@
     "sequelize": "^6.6.5",
     "sqlite3": "^5.0.2",
     "zone.js": "^0.11.4"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1"
   }
 }

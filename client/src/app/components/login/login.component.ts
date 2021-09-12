@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.message = this.authService.isUserAuthenticated()
-      ? "User is logged in"
-      : "User is signed out";
+      ? ""
+      : "Sign in or create an account";
   }
 
   doLogin() {

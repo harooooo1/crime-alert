@@ -1,31 +1,34 @@
-<p>login works!</p>
-<p>{{message}}</p>
-<a routerLink="/">Link to home page</a>
+
 
 <br>
 <br>
 
 <form [formGroup]="loginForm">
   <label>
-    Username Name:
+    Username:
+    <br>
     <input type="text"
            formControlName="username">
+    <br>
   </label>
 
   <label>
     Password:
+    <br>
     <input type="text"
            formControlName="password"
            type="password">
+    <br>
   </label>
 
   <div *ngIf="loginForm.invalid"
        style="color: red;">Form is not valid</div>
 
-
 </form>
 
 <br>
-<br>
 
-<button class="btn-primary btn"   (click)="doLogin()">Login</button>
+<button mat-flat-button color="primary" routerLink="/">Home</button>
+<button mat-flat-button color="primary" (click)="doLogin()">Login</button>
+
+<p>{{message}}</p>

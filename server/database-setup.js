@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const dataPopulators = require("./seed-data");
 
-const crime_alert = new Sequelize("crime_alert", "root", "haroorah1", {
+const crime_alert = new Sequelize("crime_alert", "root", "adminadmin", {
   host: "localhost",
   dialect: "mysql",
   // dialect: "sqlite",

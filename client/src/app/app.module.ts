@@ -17,12 +17,15 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { CrimeComponent } from './components/crime/crime.component';
 import { CrimeReportComponent } from './components/crime-report/crime-report.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { RegisterComponent } from './components/register/register.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from "@angular/material/form-field";
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CrimeComponent,
     CrimeReportComponent,
     CreatePostComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
