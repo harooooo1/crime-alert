@@ -17,7 +17,7 @@
     "install-back": "npm install",
     "build-frontend": "cd client && npm run build",
     "start": "npm run install-back && npm run backend",
-    "heroku-postbuild": "npm run install-front && npm run build"
+    "heroku-postbuild": "npm run install-front && npm run build-frontend"
   },
   "keywords": [],
   "author": "",
