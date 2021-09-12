@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const dataPopulators = require("./seed-data");
 
 const crime_alert = new Sequelize("crime_alert", "root", "adminadmin", {
-  host: "localhost",
+  host: "0.0.0.0",
   dialect: "mysql",
   // dialect: "sqlite",
   // storage: "./server/database.sqlite",

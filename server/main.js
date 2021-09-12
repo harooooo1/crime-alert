@@ -55,6 +55,6 @@ server.post('/posts', PostHandlers.createPost);
 server.post('/posts/:id/delete', PostHandlers.deletePost);
 server.post('/posts/:id/edit', PostHandlers.editPost);
 
-server.listen(8080, () =>
+server.listen(process.env.PORT || 8080, () =>
   console.log("%s listening at %s", server.name, server.url)
 );
