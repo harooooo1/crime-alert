@@ -15,7 +15,7 @@
     "dev" : "concurrently --kill-others \"npm run backend-dev\" \"npm run frontend\"",
     "install-front": "cd client && npm install",
     "install-back": "npm install",
-    "build-frontend": "cd client && npm run build",
+    "build-frontend": "cd client && ng build",
     "start": "npm run install-back && npm run backend",
     "heroku-postbuild": "npm run install-front && npm run build-frontend"
   },
