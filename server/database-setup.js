@@ -4,10 +4,10 @@ const dataPopulators = require("./seed-data");
 const crime_alert = new Sequelize("crime_alert", "root", "adminadmin", {
   host: "0.0.0.0",
   dialect: "mysql",
-  // dialect: "sqlite",
-  // storage: "./server/database.sqlite",
+  
+
   pool: { max: 5, min: 0, acquire: 30000, idle: 10000 },
-  // operatorsAliases: false,
+  
 });
 
 // Model definition
@@ -21,7 +21,6 @@ const User = crime_alert.define("User", {
   password: Sequelize.STRING,
   firstName: Sequelize.STRING,
   lastName: Sequelize.STRING,
-  totalWins: Sequelize.INTEGER,
   authToken: Sequelize.STRING,
   isBanned: Sequelize.BOOLEAN, // 0 or 1, default 0
   isAdmin: Sequelize.BOOLEAN, // 0 or 1, default 0

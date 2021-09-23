@@ -26,13 +26,7 @@ const server = restify
   .use(AuthHandlers.authFilter);
 // AUTH CHECK
 
-// LOGIN, LOGOUT AND REGISTER
-server.post('/register', AuthHandlers.register);
-server.post('/login', AuthHandlers.login);
-server.post('/logout', AuthHandlers.logout);
-
-server.get('/games', GameHandlers.getGames);
-server.get('/games/:id', GameHandlers.getGamesById);
+// GAMES, EXTRA FUNCTIONALITY
 
 server.post('/games', GameHandlers.createGames);
 server.post('/games/:id/join', GameHandlers.joinGames);
@@ -43,6 +37,14 @@ server.post('/games/:id/leave', GameHandlers.leaveGames);
 server.post('/games/:id/reveal-card', GameHandlers.revealCards);
 
 server.post('/games/:id/kick', GameHandlers.kickPlayer);
+
+// LOGIN, LOGOUT AND REGISTER
+server.post('/register', AuthHandlers.register);
+server.post('/login', AuthHandlers.login);
+server.post('/logout', AuthHandlers.logout);
+
+server.get('/games', GameHandlers.getGames);
+server.get('/games/:id', GameHandlers.getGamesById);
 
 // crime alert endpoints
 

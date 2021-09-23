@@ -11,12 +11,12 @@ import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [ AuthenticationGuard ] },
-  { path: 'games', component: GamesListComponent, canActivate: [ AuthenticationGuard ] },
-  { path: 'games/:id', component: GameContainerComponent, canActivate: [ AuthenticationGuard ] },
   { path: 'crime-feed', component: CrimeFeedComponent, canActivate: [ AuthenticationGuard ] },
   { path: 'posts', component: CreatePostComponent, canActivate: [ AuthenticationGuard ] },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'games', component: GamesListComponent, canActivate: [ AuthenticationGuard ] },
+  { path: 'games/:id', component: GameContainerComponent, canActivate: [ AuthenticationGuard ] }
 ];
 
 @NgModule({

@@ -37,8 +37,6 @@ async function createPost(req, res, next) {
     const userId = req.get('userId');
     const postInfo = req.body.info;
 
-    console.log(req.body.image);
-
     const newPost = {
         UserId: userId,
         title: postInfo.title,
@@ -46,21 +44,13 @@ async function createPost(req, res, next) {
         state: 0,
     };
 
-    // mix in a photo somehow
-
     const post = await Post.create(newPost);
 
     res.send({
         code: 'Success',
         data: post,
     });
-
-    Image.create({
-        type: postInfo.imgtype,
-        name: postInfo.imgname,
-        PostId: post.id
-    });
-
+    
     return next();
 }
 
