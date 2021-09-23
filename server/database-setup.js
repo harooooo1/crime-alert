@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const dataPopulators = require("./seed-data");
+//const dataPopulators = require("./seed-data");
 
 const crime_alert = new Sequelize("crime_alert", "root", "adminadmin", {
   host: "0.0.0.0",
@@ -46,7 +46,7 @@ const Image = crime_alert.define("Image", {
 
 });
 
-const Game = crime_alert.define("Game", {
+/* const Game = crime_alert.define("Game", {
 
   id: {
     type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
@@ -64,7 +64,7 @@ const Player = crime_alert.define("Player", {
   playerNumber: Sequelize.INTEGER, //players number inside the game (example: player1, player2 etc....)
   playerName: Sequelize.STRING      // username pulled from user table
 
-});
+}); */
 
 //Hello.hasOne(Hello2);
 //Hello2.belongsTo(Hello);
@@ -74,32 +74,32 @@ Post.belongsTo(User);
 Post.hasOne(Image);
 
 
-User.hasMany(Game);
+/* User.hasMany(Game);
 User.belongsToMany(Game, { through: Player });
-Game.belongsToMany(User, { through: Player });
+Game.belongsToMany(User, { through: Player }); */
 //Project.belongsToMany(User, { through: UserProjects });
 
 // INIT DB ENTITY MODELS
 (async function () {
 
-  const FORCE_RECREATE_MODELS = false;
-  const DO_SYNC = false;
+  const FORCE_RECREATE_MODELS = true;
+  const DO_SYNC = true;
 
   // Drop tables in order to avoid foreign key constraint issues
   if (FORCE_RECREATE_MODELS) {
     User.drop();
     Post.drop();
     Image.drop();
-    Game.drop();
-    Player.drop();
+   /* Game.drop();
+    Player.drop(); */
   }
   // Sync models
   if (DO_SYNC) {
     await User.sync({ force: FORCE_RECREATE_MODELS });
     await Post.sync({ force: FORCE_RECREATE_MODELS });
     await Image.sync({ force: FORCE_RECREATE_MODELS });
-    await Game.sync({ force: FORCE_RECREATE_MODELS });
-    await Player.sync({ force: FORCE_RECREATE_MODELS });
+  /*  await Game.sync({ force: FORCE_RECREATE_MODELS });
+    await Player.sync({ force: FORCE_RECREATE_MODELS }); */
   }
 
   // repopulate the db with predefined data
@@ -112,6 +112,6 @@ Game.belongsToMany(User, { through: Player });
 module.exports.User = User;
 module.exports.Post = Post;
 module.exports.Image = Image;
-module.exports.Game = Game;
-module.exports.Player = Player;
+/* module.exports.Game = Game;
+module.exports.Player = Player; */
 module.exports.crime_alert = crime_alert;
