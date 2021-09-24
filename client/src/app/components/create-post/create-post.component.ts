@@ -17,10 +17,11 @@ export class CreatePostComponent implements OnInit {
   onPostClick(titleInput: HTMLTextAreaElement, commentInput: HTMLTextAreaElement) {
 
     const PostInfo = {
-    title: titleInput.value + " " + new Date(),
+    title: titleInput.value,
+    time: new Date(),
     text: commentInput.value,
-    imgtype: this.selectedImageFile.type,
-    imgname: this.selectedImageFile.name
+   // imgtype: this.selectedImageFile.type,
+   // imgname: this.selectedImageFile.name
     }
 
     //const imagezz = this.selectedImageFile;
@@ -28,7 +29,8 @@ export class CreatePostComponent implements OnInit {
     this.restService.createPost(PostInfo).subscribe(
       (res: any) => {
         console.log("Success", res.data.id);
-        //this.router.navigate(["crime-feed/"]);
+        this.router.navigate(["crime-feed/"]);
+        
       },
       (err) => {
         console.error("Failed to create post", err);

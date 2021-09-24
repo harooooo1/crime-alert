@@ -1,5 +1,22 @@
-<app-crime></app-crime>
-<div id="bg1">
+<div id="post-feed"> 
+
+<mat-card *ngFor="let crime of crimes">
+    <mat-card-header>
+        <mat-card-title> {{ crime.title }} </mat-card-title>
+        <mat-card-subtitle>reported by {{ crime.UserId }} at {{ crime.time }} </mat-card-subtitle>
+    </mat-card-header>
+    <img src="../../../assets/windowbroken.jpg">
+    <mat-card-content>
+        {{ crime.text }}
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-icon class="action-item" color="warn">save</mat-icon>
+    </mat-card-actions>
+</mat-card>
+
+</div>
+
+<div>
     <button (click)="onCreatePostClick()" mat-fab color="warn" id="post-button">
         <mat-icon>add</mat-icon>
     </button>

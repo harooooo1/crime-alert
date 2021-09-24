@@ -1,1 +1,59 @@
-<p>register works!</p>
+<div class="text-center">
+    <br>
+    <br>
+    
+    <img src="../../../assets/logo123.png" alt="Crime Alert">
+    
+    <form [formGroup]="registerForm">
+      <label>
+        First Name:
+        <br>
+        <input type="text"
+               formControlName="fname">
+        <br>
+      </label>
+      <br>
+      <label>
+        Last Name:
+        <br>
+        <input type="text"
+               formControlName="lname">
+        <br>
+      </label>
+      <br>
+      <label>
+        Email Address:
+        <br>
+        <input type="email"
+               formControlName="eemail">
+        <br>
+      </label>
+      <br>
+      <label>
+        Username:
+        <br>
+        <input type="text"
+               formControlName="username">
+        <br>
+      </label>
+      
+      <br>
+      <label>
+        Password:
+        <br>
+        <input type="text"
+               formControlName="password"
+               type="password">
+        <br>
+      </label>
+    
+      <div *ngIf="registerForm.invalid"
+           style="color: red;">Form is not valid</div>
+    
+    </form>
+    
+    <br>
+    
+<button mat-flat-button color="warn" (click)="backToLogin()">Back to Login</button>
+<button mat-flat-button color="warn" (click)="registerAcc()">Submit</button>
+</div>

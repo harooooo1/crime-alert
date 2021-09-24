@@ -40,6 +40,7 @@ async function createPost(req, res, next) {
     const newPost = {
         UserId: userId,
         title: postInfo.title,
+        time: postInfo.time,
         text: postInfo.text,
         state: 0,
     };

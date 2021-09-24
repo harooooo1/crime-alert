@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./games-list.component.css"],
 })
 export class GamesListComponent implements OnInit {
+  
   public games = [];
 
   constructor(private restService: RestService, private router: Router) { }

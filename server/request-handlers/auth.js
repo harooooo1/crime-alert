@@ -39,6 +39,9 @@ async function register(req, res, next) {
     const passwordHash = await bcrypt.hash(plainTextPassword, 5);
     const newUser = {
         username: req.body.username,
+        email: req.body.eemail,
+        firstName: req.body.fname,
+        lastName: req.body.lname,
         password: passwordHash,
     };
     const user = await User.create(newUser);

@@ -13,7 +13,7 @@
            formControlName="username">
     <br>
   </label>
-
+  <br>
   <label>
     Password:
     <br>
@@ -30,7 +30,7 @@
 
 <br>
 
-<button mat-flat-button color="warn" routerLink="/">Register</button>
+<button mat-flat-button color="warn" (click)="doRegister()">Register</button>
 <button mat-flat-button color="warn" (click)="doLogin()">Login</button>
 
 <p>{{message}}</p>

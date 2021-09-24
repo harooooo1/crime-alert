@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RestService } from "../../services/rest.service";
 
 @Component({
   selector: 'app-crime',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrimeComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {

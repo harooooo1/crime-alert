@@ -33,6 +33,7 @@ const Post = crime_alert.define("Post", {
     type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true
   },
   title: Sequelize.STRING,
+  time: Sequelize.STRING,
   text: Sequelize.STRING,
   state: Sequelize.BOOLEAN // 0 for shown, 1 for hidden
 
@@ -82,8 +83,8 @@ Game.belongsToMany(User, { through: Player }); */
 // INIT DB ENTITY MODELS
 (async function () {
 
-  const FORCE_RECREATE_MODELS = true;
-  const DO_SYNC = true;
+  const FORCE_RECREATE_MODELS = false;
+  const DO_SYNC = false;
 
   // Drop tables in order to avoid foreign key constraint issues
   if (FORCE_RECREATE_MODELS) {

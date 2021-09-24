@@ -12,6 +12,23 @@ export class RestService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
 
+  register(fname, lname, eemail, username, password) {
+    return this.http.post(this.apiEndpoint + "register", {
+      fname: fname,
+      lname: lname,
+      eemail: eemail,
+      username: username,
+      password: password,
+      
+    }, 
+    
+  /*  {
+      headers: { "x-auth-token": this.authService.getToken() },
+    } */
+    
+    );
+  }
+
   getAllPosts() {
     return this.http.get(this.apiEndpoint + "posts", {
       headers: { "x-auth-token": this.authService.getToken() },
@@ -31,6 +48,18 @@ export class RestService {
     }, {
       headers: { "x-auth-token": this.authService.getToken() },
     });
+  }
+
+  editPost(info) {
+
+    return this.http.post(this.apiEndpoint + "posts", {
+      info: info
+      //image: image
+    }, {
+      headers: { "x-auth-token": this.authService.getToken() },
+    });
+
+
   }
 
   getAllGames() {
